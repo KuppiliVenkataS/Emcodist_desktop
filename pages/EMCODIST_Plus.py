@@ -154,6 +154,8 @@ def search_plus(query, df_list, from_date, to_date):
     return True
 
 
+
+
 def main():
 
     st.set_page_config(layout="wide")
@@ -162,7 +164,7 @@ def main():
         c1, c2  = st.columns([3,1])
 
         with c1:
-            query = st.text_input("Enter your search query 👇. For Best results limit query to two words", 'Election Bush')
+            query = st.text_input("Enter your search query 👇. For Best results limit query to two words", placeholder='Election Bush')
 
         with c2:
             dates = st.date_input ( 'Enter to and from search dates' , value=[datetime.date(2000,12,1), datetime.date(2004,10,9)] )
@@ -214,8 +216,12 @@ def main():
         
         query = query
         
-        st.form_submit_button(label = 'Search',on_click=search_plus, kwargs= dict(query=query, df_list = search_list, from_date = from_date, to_date = to_date ) )
+        submit_button = st.form_submit_button(label = 'Search' )
+
+    if submit_button:  
+        search_plus(query=query, df_list = search_list, from_date = from_date, to_date = to_date )
         st.write('Your results file is at: '+RESULTS_DIR+'Plus_'+query+'.csv')
+        return
 
 if __name__ == '__main__':
 	main()

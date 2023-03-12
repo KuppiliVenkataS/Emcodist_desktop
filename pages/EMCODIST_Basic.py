@@ -211,8 +211,10 @@ def search(query, search_list, from_date, to_date):
     
     new_df = new_df.drop_duplicates(ignore_index=True)
     new_df =  new_df.reset_index(drop=True)
-    
-    new_df.to_csv(RESULTS_DIR+'Basic_'+query+'.csv')
+    try:
+        new_df.to_csv(RESULTS_DIR+'Basic_'+query+'.csv')
+    except:
+        print('unable to write to Results folder. Try again after closing earlier results files')
 
     #
 
@@ -227,11 +229,11 @@ def main():
         c1, c2  = st.columns([3,1])
 
         with c1:
-            query = st.text_input("Enter your search query 👇. For Best results limit query to two words", 'Election Bush')
-
+            query = st.text_input("Enter your search query 👇. For Best results limit query to two words", placeholder='Election Bush'  )
+            
         with c2:
             dates = st.date_input ( 'Enter to and from search dates' , value=[datetime.date(2000,12,1), datetime.date(2004,10,9)] )
-
+            
         c2, c3,c4,c5,c6 = st.columns(5)
         with c2:
             all = st.checkbox('all', value=True)
@@ -277,10 +279,13 @@ def main():
             if key:
                 search_list.append([ i for i, j in locals().items() if j == key][0])
         
-        query = query
+        #query = query
+        #print('query 2= '+query)
+        submit_button = st.form_submit_button(label = 'Search' )
         
-        st.form_submit_button(label = 'Search',on_click=search, kwargs= dict(query=query, search_list = search_list, from_date = from_date, to_date = to_date ) )
         
+    if submit_button:
+        search(query=query, search_list = search_list, from_date = from_date, to_date = to_date )
         st.write('Your results file is at: '+RESULTS_DIR+'Basic_'+query+'.csv')
         return 
 
