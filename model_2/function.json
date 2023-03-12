@@ -1,0 +1,22 @@
+{
+    "scriptFile": "wrapper.py",
+    "entryPoint": "main",
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "in",
+        "type": "httpTrigger",
+        "authLevel": "anonymous",
+        "route": "advanced_search",
+        "dataType": "string",
+        "methods": [
+            "get"
+        ]
+      },
+      {
+        "name": "$return",
+        "direction": "out",
+        "type": "http"
+      }
+    ]
+  }
