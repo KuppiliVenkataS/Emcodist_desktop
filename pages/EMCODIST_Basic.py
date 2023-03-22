@@ -12,6 +12,8 @@ import spacy
 from spacy.matcher import PhraseMatcher
 import pandas as pd
 
+#from display import frequency_plot, time_plot, create_wordcloud
+
 
 INBOXES_DIR = 'D:/Dropbox/EmailPresentation/Emcodist_desktop/Data/OriginalData/enron_mail_20150507/maildir/' # original data
 DATASETS_DIR = 'D:/Email_contextualization/Enron_data/' # assuming all datasets are here
@@ -167,7 +169,11 @@ def get_emails_set(df, query, search_method):
 # Now just save them as a excel, opening the list of row-ids.
 #Actually the following procedure is not needed if we need only the list of public_ids.
 #****************************************************************************#
-
+def make_clickable(link):
+    # target _blank to open new window
+    ib = INBOXES_DIR.replace('/','\\')
+    #print(ib)
+    return f'<a target="_blank" href="{ib + link }"> Link </a>'
 
 
 #****************************************************************************#
@@ -210,6 +216,8 @@ def search(query, search_list, from_date, to_date):
     new_df = new_df[['public_id']].copy()
     
     new_df = new_df.drop_duplicates(ignore_index=True)
+    
+    new_df['Link'] = new_df['public_id'].apply(make_clickable)
     new_df =  new_df.reset_index(drop=True)
     try:
         new_df.to_csv(RESULTS_DIR+'Basic_'+query+'.csv')
@@ -218,8 +226,10 @@ def search(query, search_list, from_date, to_date):
 
     #
 
-    #return new_df['public_id'].to_json(orient='records')
-    return True
+    return new_df
+
+
+
 
 def main():
 
@@ -285,8 +295,11 @@ def main():
         
         
     if submit_button:
-        search(query=query, search_list = search_list, from_date = from_date, to_date = to_date )
+        new_df = search(query=query, search_list = search_list, from_date = from_date, to_date = to_date )
         st.write('Your results file is at: '+RESULTS_DIR+'Basic_'+query+'.csv')
+
+        new_df = new_df.to_html(escape=False)
+        st.write(new_df, unsafe_allow_html=True)
         return 
 
         

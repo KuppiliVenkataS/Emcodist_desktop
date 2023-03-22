@@ -104,6 +104,14 @@ def _get_date(x):
 
 #****************************************************************************#
 
+def make_clickable(link):
+    
+    # target _blank to open new window    
+    ib = INBOXES_DIR.replace('/','\\')    
+      
+    # convert the url into link
+    return '<a  target="_blank" href="{}"> Link </a>'.format(os.path.join(ib, link))
+
 #****************************************************************************#
 #The following function is to get emails similar to the query
 def search_plus(query, df_list, from_date, to_date):
@@ -146,13 +154,12 @@ def search_plus(query, df_list, from_date, to_date):
     new_df = new_df.drop_duplicates(ignore_index=True)
     new_df =  new_df.reset_index(drop=True)
     
-    #new_df.to_json(os.path.join(RESULTS_DIR, 'model2_'+query+'.json'),orient='records')
-    new_df.to_csv(RESULTS_DIR+'Plus_'+query+'.csv')
-
+    # link is the column with hyperlinks
+    new_df['Link'] = new_df['email_id'].apply(lambda x: make_clickable(x))
+    new_df.to_csv(RESULTS_DIR+'Plus_'+query+'.csv')   
     
-    #return new_df.to_json(orient='records')
-    return True
-
+    
+    return new_df
 
 
 
@@ -219,8 +226,14 @@ def main():
         submit_button = st.form_submit_button(label = 'Search' )
 
     if submit_button:  
-        search_plus(query=query, df_list = search_list, from_date = from_date, to_date = to_date )
+        new_df = search_plus(query=query, df_list = search_list, from_date = from_date, to_date = to_date )
         st.write('Your results file is at: '+RESULTS_DIR+'Plus_'+query+'.csv')
+
+         
+        new_df = new_df.to_html(escape=False)
+        st.write(new_df, unsafe_allow_html=True)
+        
+
         return
 
 if __name__ == '__main__':

@@ -1,21 +1,21 @@
-,email_id,relevance
-0,davis-d\personal\6_,71
-1,lavorato-j\all_documents\615_,68
-2,ring-r\deleted_items\259_,65
-3,ring-r\deleted_items\258_,64
-4,gilbertsmith-d\all_documents\95_,64
-5,corman-s\deleted_items\413_,59
-6,kaminski-v\all_documents\1207_,58
-7,white-s\deleted_items\986_,57
-8,kean-s\all_documents\4691_,57
-9,lenhart-m\all_documents\467_,57
-10,horton-s\all_documents\464_,57
-11,smith-m\inbox\331_,57
-12,guzman-m\all_documents\719_,57
-13,panus-s\deleted_items\268_,57
-14,arnold-j\deleted_items\10_,56
-15,zufferli-j\sent_items\122_,56
-16,solberg-g\sent_items\29_,56
-17,ring-r\deleted_items\269_,56
-18,dasovich-j\all_documents\8477_,55
-19,kean-s\sent_items\7_,55
+,email_id,relevance,Link
+0,davis-d\personal\6_,71,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\davis-d\personal\6_""> Link </a>"
+1,lavorato-j\all_documents\615_,68,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\lavorato-j\all_documents\615_""> Link </a>"
+2,ring-r\deleted_items\259_,65,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\ring-r\deleted_items\259_""> Link </a>"
+3,ring-r\deleted_items\258_,64,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\ring-r\deleted_items\258_""> Link </a>"
+4,gilbertsmith-d\all_documents\95_,64,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\gilbertsmith-d\all_documents\95_""> Link </a>"
+5,corman-s\deleted_items\413_,59,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\corman-s\deleted_items\413_""> Link </a>"
+6,kaminski-v\all_documents\1207_,58,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\kaminski-v\all_documents\1207_""> Link </a>"
+7,white-s\deleted_items\986_,57,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\white-s\deleted_items\986_""> Link </a>"
+8,kean-s\all_documents\4691_,57,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\kean-s\all_documents\4691_""> Link </a>"
+9,lenhart-m\all_documents\467_,57,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\lenhart-m\all_documents\467_""> Link </a>"
+10,horton-s\all_documents\464_,57,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\horton-s\all_documents\464_""> Link </a>"
+11,smith-m\inbox\331_,57,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\smith-m\inbox\331_""> Link </a>"
+12,guzman-m\all_documents\719_,57,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\guzman-m\all_documents\719_""> Link </a>"
+13,panus-s\deleted_items\268_,57,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\panus-s\deleted_items\268_""> Link </a>"
+14,arnold-j\deleted_items\10_,56,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\arnold-j\deleted_items\10_""> Link </a>"
+15,zufferli-j\sent_items\122_,56,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\zufferli-j\sent_items\122_""> Link </a>"
+16,solberg-g\sent_items\29_,56,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\solberg-g\sent_items\29_""> Link </a>"
+17,ring-r\deleted_items\269_,56,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\ring-r\deleted_items\269_""> Link </a>"
+18,dasovich-j\all_documents\8477_,55,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\dasovich-j\all_documents\8477_""> Link </a>"
+19,kean-s\sent_items\7_,55,"<a  target=""_blank"" href=""D:\Email_contextualization\Enron_data\enron_mail_20150507\maildir\kean-s\sent_items\7_""> Link </a>"
